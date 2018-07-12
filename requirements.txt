@@ -1,0 +1,5 @@
+pandas
+xlrd
+pytest
+pytest-cov
+codecov

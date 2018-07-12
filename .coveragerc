@@ -1,0 +1,5 @@
+[run]
+source = jup2jek
+omit =
+    setup.py
+    */tests/example.py

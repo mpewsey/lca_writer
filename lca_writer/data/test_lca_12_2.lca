@@ -1,0 +1,298 @@
+TYPE='LCA FILE' VERSION='12.2' UNITS='US' SOURCE='Tower Version 14.40' USER='' FILENAME=''
+6 ; num_load_cases
+21 ; num_load_points
+1 1 1 1 1 32.8084 0 0.000000 1 0 1 1 0 0 1 0 0 1.600000 0 0 1 0.000000 32808.398950
+INTACT-TAN
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRT_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRM_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRM_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRB_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRB_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLT_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLT_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLM_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLM_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLB_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLB_BK
+2200 900 -11450 '' ; V T and L loads including insul weight
+SW_AH
+850 600 -5000 '' ; V T and L loads including insul weight
+SW_BK
+850 600 -5000 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
+INTACT-45DEG
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRT_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRM_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRM_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRB_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRB_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLT_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLT_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLM_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLM_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLB_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLB_BK
+2200 6000 -10600 '' ; V T and L loads including insul weight
+SW_AH
+850 2500 -4650 '' ; V T and L loads including insul weight
+SW_BK
+850 2500 -4650 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
+ALL WIRES BROKEN-TAN BK
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRT_BK
+0 0 0 '' ; V T and L loads including insul weight
+CRM_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRM_BK
+0 0 0 '' ; V T and L loads including insul weight
+CRB_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CRB_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLT_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLT_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLM_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLM_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLB_AH
+2200 900 -11450 '' ; V T and L loads including insul weight
+CLB_BK
+0 0 0 '' ; V T and L loads including insul weight
+SW_AH
+850 600 -5000 '' ; V T and L loads including insul weight
+SW_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
+ALL WIRES BROKEN-45DEG BK
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRT_BK
+0 0 0 '' ; V T and L loads including insul weight
+CRM_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRM_BK
+0 0 0 '' ; V T and L loads including insul weight
+CRB_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CRB_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLT_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLT_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLM_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLM_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLB_AH
+2200 6000 -10600 '' ; V T and L loads including insul weight
+CLB_BK
+0 0 0 '' ; V T and L loads including insul weight
+SW_AH
+850 2500 -4650 '' ; V T and L loads including insul weight
+SW_BK
+0 0 0 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
+SPECIAL VERTICAL-DOWN
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CRT_BK
+7000 0 0 '' ; V T and L loads including insul weight
+CRM_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CRM_BK
+7000 0 0 '' ; V T and L loads including insul weight
+CRB_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CRB_BK
+7000 0 0 '' ; V T and L loads including insul weight
+CLT_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CLT_BK
+7000 0 0 '' ; V T and L loads including insul weight
+CLM_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CLM_BK
+7000 0 0 '' ; V T and L loads including insul weight
+CLB_AH
+7000 0 0 '' ; V T and L loads including insul weight
+CLB_BK
+7000 0 0 '' ; V T and L loads including insul weight
+SW_AH
+5000 0 0 '' ; V T and L loads including insul weight
+SW_BK
+5000 0 0 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
+SPECIAL VERTICAL-UP
+0 ; include insulator wind/weight
+0.66 0 0 0 0 1 0 0 1 1 ; Strength factors: steel, wood, ult. conc, first conc, zero conc, guy, arm, brace, insulator, foundation
+1 ; Structure weight load factor
+10 0 2 ; Factored structure transverse and longitudinal wind pressures
+1.5 0 0 0 0 0
+ CRT_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CRT_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CRM_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CRM_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CRB_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CRB_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CLT_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CLT_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CLM_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CLM_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CLB_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+CLB_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+SW_AH
+-3000 0 0 '' ; V T and L loads including insul weight
+SW_BK
+-3000 0 0 '' ; V T and L loads including insul weight
+CLB
+0 0 0 '' ; V T and L loads including insul weight
+CLM
+0 0 0 '' ; V T and L loads including insul weight
+CLT
+0 0 0 '' ; V T and L loads including insul weight
+CRB
+0 0 0 '' ; V T and L loads including insul weight
+CRM
+0 0 0 '' ; V T and L loads including insul weight
+CRT
+0 0 0 '' ; V T and L loads including insul weight
+S
+0 0 0 '' ; V T and L loads including insul weight
+0
