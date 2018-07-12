@@ -1,5 +1,4 @@
 [run]
-source = jup2jek
+source = lca_writer
 omit =
     setup.py
-    */tests/example.py
