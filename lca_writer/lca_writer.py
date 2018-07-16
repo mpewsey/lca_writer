@@ -1,3 +1,7 @@
+"""
+Provides a class for writing LCA files.
+"""
+
 import os
 import shutil
 import pandas as pd

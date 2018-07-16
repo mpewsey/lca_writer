@@ -18,22 +18,49 @@
 
 import os
 import sys
+from configparser import ConfigParser
+from recommonmark.transform import AutoStructify
+from recommonmark.parser import CommonMarkParser
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-ROOT_PATH = os.path.abspath(os.path.join('..'))
-if ROOT_PATH not in sys.path:
-    sys.path.insert(0, ROOT_PATH)
+root = os.path.abspath(os.path.join('..'))
+sys.path.insert(0, root)
+
+# Load metadata from setup.cfg
+metadata_file = os.path.join(root, 'setup.cfg')
+metadata = ConfigParser()
+metadata.read(metadata_file)
+metadata = metadata['metadata']
+
+with open(os.path.join(root, 'README.md'), 'rt') as fh:
+    metadata['long_description'] = fh.read()
+
+# Render index.md with metadata
+def write_index():
+    path = os.path.join(root, 'docs', '_templates')
+    env = Environment(loader = FileSystemLoader(path),
+                      undefined = StrictUndefined)
+    template = env.get_template('index.md')
+    s = template.render(**metadata)
+
+    with open(os.path.join(root, 'docs', 'index.md'), 'wt') as fh:
+        fh.truncate()
+        fh.write(s)
+
+write_index()
 
 # -- Project information -----------------------------------------------------
 
-project = 'LCA Writer'
-copyright = '2018, Matt Pewsey'
-author = 'Matt Pewsey'
+project = metadata['project']
+copyright = metadata['copyright']
+author = metadata['author']
 
 # The short X.Y version
-version = ''
+version = metadata['version']
 # The full version, including alpha/beta/rc tags
-release = ''
+release = metadata['version']
 
+github_doc_root = 'https://github.com/line-mind/{}/tree/master/'.format(metadata['name'])
 
 # -- General configuration ---------------------------------------------------
 
@@ -63,8 +90,12 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+#source_suffix = '.rst'
+
+source_parsers = {
+   '.md' : CommonMarkParser
+}
 
 # The master toctree document.
 master_doc = 'index'
@@ -118,7 +149,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'lcawriterdoc'
+htmlhelp_basename = '{}_doc'.format(metadata['name'])
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -147,8 +178,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'lcawriter.tex', 'LCA Writer Documentation',
-     'Matt Pewsey', 'manual'),
+    (master_doc, '{}.tex'.format(metadata['name']), '{} Documentation'.format(metadata['project']),
+     author, 'manual'),
 ]
 
 
@@ -157,7 +188,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'lcawriter', 'LCA Writer Documentation',
+    (master_doc, metadata['name'], '{} Documentation'.format(metadata['project']),
      [author], 1)
 ]
 
@@ -168,9 +199,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'lcawriter', 'LCA Writer Documentation',
-     author, 'lcawriter', '',
-     ''),
+    (master_doc, metadata['name'], '{} Documentation'.format(metadata['project']),
+     author, metadata['name'], metadata['description'],
+     'Miscellaneous'),
 ]
 
 
@@ -185,3 +216,11 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# AutoStructify setup
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Module Contents',
+            }, True)
+    app.add_transform(AutoStructify)

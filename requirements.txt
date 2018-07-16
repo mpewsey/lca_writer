@@ -1,5 +1,12 @@
 pandas
 xlrd
+
+# test
 pytest
 pytest-cov
 codecov
+
+# docs
+jinja2
+recommonmark
+docutils==0.14

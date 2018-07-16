@@ -1,3 +1,7 @@
+"""
+Provides methods and variables for loading data from the package data folder.
+"""
+
 import os
 from ..lca_writer import LCAWriter
 
