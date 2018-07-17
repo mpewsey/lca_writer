@@ -1,3 +1,5 @@
 include LICENSE
 include README.md
-include lca_writer/data/*
+include lca_writer/data/lca_form.xlsx
+include lca_writer/data/test_lca_form.xlsx
+include lca_writer/data/test_lca_12_2.lca

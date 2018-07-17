@@ -47,8 +47,8 @@ class LCAWriter():
             path : str
                 Path to which form will be saved.
         """
-        from . import data
-        p = os.path.join(data.DATA_FOLDER, 'lca_form.xlsx')
+        from .data import DATA_FOLDER # to prevent recursive import
+        p = os.path.join(DATA_FOLDER, 'lca_form.xlsx')
         shutil.copy(p, path)
 
     def load_data(self, path):

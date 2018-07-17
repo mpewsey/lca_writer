@@ -7,4 +7,4 @@ Data Loaders (:mod:`lca_writer.data`)
    :members:
 """
 
-from .loader import *
+from .loader import DATA_FOLDER, load_data

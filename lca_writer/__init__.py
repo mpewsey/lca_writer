@@ -7,6 +7,4 @@ LCA Writer (:mod:`lca_writer`)
    :members:
 """
 
-
-from .lca_writer import *
-from .data import *
+from .lca_writer import LCAWriter
