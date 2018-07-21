@@ -8,6 +8,8 @@ __pycache__/
 
 docs/index.md
 
+private/*
+
 # Distribution / packaging
 .Python
 build/

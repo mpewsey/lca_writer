@@ -1,5 +1,11 @@
 """
+Summary
+-------
 Provides a class for writing LCA files.
+
+Classes
+-------
+
 """
 
 import os
@@ -11,16 +17,26 @@ class LCAWriter():
     """
     A class capable of loading form data and writing and LCA file.
 
-    Parameters:
-        path : str
-            Path to the form.
+    Parameters
+    ----------
+    path : str
+        Path to the form.
+
+    Attributes
+    ----------
+    path : str
+        Path to the form.
+    load_cases : data frame
+        A data frame of loaded load cases.
+
     """
     def __init__(self, path):
+        self.load_cases = None
         self.path = path
         self.load_data(path)
 
     @staticmethod
-    def load_case_converters():
+    def _load_case_converters():
         """Returns a list of value conversion functions for load case data."""
         wind_ice_model = {
             'Wind on All' : 0,
@@ -61,7 +77,7 @@ class LCAWriter():
         """
         # Load sheets
         load_cases = pd.read_excel(path, sheet_name = 'Load Cases',
-                                   header = 1, converters = self.load_case_converters(),
+                                   header = 1, converters = self._load_case_converters(),
                                    dtype = {'point_loads' : object, 'joint_displs' : object})
         point_loads = pd.read_excel(path, sheet_name = 'Point Loads', header = 1)
         joint_displs = pd.read_excel(path, sheet_name = 'Joint Displacements', header = 1)

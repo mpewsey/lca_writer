@@ -3,7 +3,13 @@
 Scripts (:mod:`lca_writer.scripts`)
 ===================================
 
+Summary
+-------
 Includes classes for parsing command line arguments.
+
+Classes
+-------
+
 """
 
 from argparse import ArgumentParser
@@ -23,7 +29,7 @@ class LCAWriterArgParser(ArgumentParser):
         self.add_argument('-t', '--template',
                           nargs = '?',
                           help = 'Path to save the Excel form template (optional).',
-                          default = '?NONE')
+                          default = None)
 
         self.add_argument('-v', '--version',
                           nargs = '?',

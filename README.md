@@ -5,12 +5,7 @@
 [![codecov](https://codecov.io/gh/line-mind/lca_writer/branch/master/graph/badge.svg)](https://codecov.io/gh/line-mind/lca_writer)
 
 
-
-## API Contents
-
-* [About](#about)
-
-## Module Contents
+## Table of Contents
 
 * [LCA Writer](lca_writer.rst)
 * [Scripts](scripts.rst)

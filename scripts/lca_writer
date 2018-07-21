@@ -9,7 +9,7 @@ if __name__ == '__main__':
     p = LCAWriterArgParser()
     a = p.parse_args(sys.arv[1:])
 
-    if a.template != '?NONE':
+    if a.template is not None:
         LCAWriter.save_template(a.template)
     else:
         for x in a.lca_forms:

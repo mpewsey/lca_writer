@@ -1,7 +1,7 @@
 """
-=====================================
-Data Loaders (:mod:`lca_writer.data`)
-=====================================
+=============================
+Data (:mod:`lca_writer.data`)
+=============================
 
 .. automodule:: lca_writer.data.loader
    :members:
