@@ -12,6 +12,7 @@ Classes
 
 """
 
+import sys
 from argparse import ArgumentParser
 
 class LCAWriterArgParser(ArgumentParser):
@@ -44,4 +45,5 @@ class LCAWriterArgParser(ArgumentParser):
         s = '\n\t'.join(s.split('\n'))
         return LCAWriterArgParser.__doc__ + '\n\t' + s + '\n\n'
 
-LCAWriterArgParser.__doc__ = LCAWriterArgParser._doc_string()
+if sys.version_info[0] >= 3:
+    LCAWriterArgParser.__doc__ = LCAWriterArgParser._doc_string()

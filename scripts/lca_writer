@@ -7,7 +7,7 @@ from lca_writer.scripts import LCAWriterArgParser
 
 if __name__ == '__main__':
     p = LCAWriterArgParser()
-    a = p.parse_args(sys.arv[1:])
+    a = p.parse_args(sys.argv[1:])
 
     if a.template is not None:
         LCAWriter.save_template(a.template)
