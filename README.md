@@ -4,12 +4,15 @@
 [![Documentation Status](https://readthedocs.org/projects/lca-writer/badge/?version=latest)](https://lca-writer.readthedocs.io/en/latest/?badge=latest)
 [![codecov](https://codecov.io/gh/line-mind/lca_writer/branch/master/graph/badge.svg)](https://codecov.io/gh/line-mind/lca_writer)
 
+<!--
 
 ## Table of Contents
 
 * [LCA Writer](lca_writer.rst)
 * [Scripts](scripts.rst)
 * [Data Loaders](data.rst)
+
+-->
 
 ## About
 
