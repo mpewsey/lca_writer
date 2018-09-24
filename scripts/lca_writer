@@ -14,4 +14,4 @@ if __name__ == '__main__':
     else:
         for x in a.lca_forms:
             lca = LCAWriter(x)
-            lca.write_lca(version = a.version)
+            lca.write_lca(version=a.version)

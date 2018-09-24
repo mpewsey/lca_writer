@@ -22,7 +22,7 @@ class LCAWriterArgParser(ArgumentParser):
     .. code-block:: none
     """
     def __init__(self):
-        ArgumentParser.__init__(self, prog = 'lca_writer')
+        ArgumentParser.__init__(self, prog='lca_writer')
         self.add_argument('lca_forms',
                           nargs = '*',
                           help = 'Excel LCA form paths.')
