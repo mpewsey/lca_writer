@@ -3,8 +3,22 @@
 LCA Writer (:mod:`lca_writer`)
 ==============================
 
-.. automodule:: lca_writer.lca_writer
-   :members:
+Submodules
+==========
+.. autosummary::
+    :toctree: generated/
+
+    data
+
+
+Classes
+=======
+.. autosummary::
+    :toctree: generated/
+
+    LCAWriter
+    LCAWriterArgParser
 """
 
-from .lca_writer import LCAWriter
+from .lca_writer import *
+from .scripts import *

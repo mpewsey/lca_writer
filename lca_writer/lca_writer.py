@@ -1,16 +1,9 @@
-"""
-Summary
--------
-Provides a class for writing LCA files.
-
-Classes
--------
-
-"""
-
 import os
 import shutil
 import pandas as pd
+from .data import DATA_FOLDER
+
+__all__ = ['LCAWriter']
 
 
 class LCAWriter():
@@ -39,17 +32,17 @@ class LCAWriter():
     def _load_case_converters():
         """Returns a list of value conversion functions for load case data."""
         wind_ice_model = {
-            'Wind on All' : 0,
-            'Wind on Face' : 2
+            'Wind on All': 0,
+            'Wind on Face': 2
         }
 
         pole_defl_check = {
-            'No Limit' : 0
+            'No Limit': 0
         }
 
         converters = {
-            'wind_ice_model' : lambda x: wind_ice_model[x],
-            'pole_defl_check' : lambda x: pole_defl_check[x]
+            'wind_ice_model': lambda x: wind_ice_model[x],
+            'pole_defl_check': lambda x: pole_defl_check[x]
         }
 
         return converters
@@ -63,7 +56,6 @@ class LCAWriter():
             path : str
                 Path to which form will be saved.
         """
-        from .data import DATA_FOLDER # to prevent recursive import
         p = os.path.join(DATA_FOLDER, 'lca_form.xlsx')
         shutil.copy(p, path)
 
@@ -76,11 +68,22 @@ class LCAWriter():
                 The location of the form.
         """
         # Load sheets
-        load_cases = pd.read_excel(path, sheet_name = 'Load Cases',
-                                   header = 1, converters = self._load_case_converters(),
-                                   dtype = {'point_loads' : object, 'joint_displs' : object})
-        point_loads = pd.read_excel(path, sheet_name = 'Point Loads', header = 1)
-        joint_displs = pd.read_excel(path, sheet_name = 'Joint Displacements', header = 1)
+        load_cases = pd.read_excel(path,
+            sheet_name='Load Cases',
+            header=1,
+            converters=self._load_case_converters(),
+            dtype={'point_loads': object, 'joint_displs': object}
+        )
+
+        point_loads = pd.read_excel(path,
+            sheet_name='Point Loads',
+            header=1
+        )
+
+        joint_displs = pd.read_excel(path,
+            sheet_name='Joint Displacements',
+            header=1
+        )
 
         # Fill in blank data
         x = 'comment'
@@ -95,18 +98,22 @@ class LCAWriter():
 
         # Filter point load and joint displacements
         for i, lc in load_cases.iterrows():
-            load_cases.at[i, 'point_loads'] = point_loads[(point_loads['point_label'] != '')
-                                                          & point_loads['load_case'].isin(['', lc['name']])]
-            load_cases.at[i, 'joint_displs'] = joint_displs[(joint_displs['point_label'] != '')
-                                                            & joint_displs['load_case'].isin(['', lc['name']])]
+            f = (point_loads['point_label'] != '') & point_loads['load_case'].isin(['', lc['name']])
+            load_cases.at[i, 'point_loads'] = point_loads[f]
+
+            f = (joint_displs['point_label'] != '') & joint_displs['load_case'].isin(['', lc['name']])
+            load_cases.at[i, 'joint_displs'] = joint_displs[f]
+
         self.load_cases = load_cases
 
     def lca_12_2(self):
-        """Returns an LCA file version 12.2 string."""
-        num_load_points = max(lc.point_loads.shape[0] for _, lc in self.load_cases.iterrows())
+        """
+        Returns an LCA file version 12.2 string.
+        """
+        num_load_points = max(len(lc.point_loads) for _, lc in self.load_cases.iterrows())
 
         s = ["TYPE='LCA FILE' VERSION='12.2' UNITS='US' SOURCE='Tower Version 14.40' USER='' FILENAME=''",
-             '{} ; num_load_cases'.format(self.load_cases.shape[0]),
+             '{} ; num_load_cases'.format(len(self.load_cases)),
              '{} ; num_load_points'.format(num_load_points),
              '1 1 1 1 1 32.8084 0 0.000000 1 0 1 1 0 0 1 0 0 1.600000 0 0 1 0.000000 32808.398950']
 
@@ -136,15 +143,16 @@ class LCAWriter():
 
         return '\r\n'.join(s)
 
-    def write_lca(self, path = None, version = '12.2'):
+    def write_lca(self, path=None, version='12.2'):
         """
         Writes and LCA file of the specified version to the path.
 
-        Parameters:
-            path : str
-                Path to the form.
-            version : str
-                The version of the LCA file to be written.
+        Parameters
+        ----------
+        path : str
+            Path to the form.
+        version : str
+            The version of the LCA file to be written.
         """
         if path == None:
             path = self.path[:-5] + '.lca'

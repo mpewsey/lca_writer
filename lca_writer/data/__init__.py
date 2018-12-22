@@ -1,10 +1,10 @@
 """
-=============================
-Data (:mod:`lca_writer.data`)
-=============================
+Contains functions for accessing built-in data used for testing.
 
-.. automodule:: lca_writer.data.loader
-   :members:
+.. autosummary::
+    :toctree:
+
+    load_data
 """
 
-from .loader import DATA_FOLDER, load_data
+from .loader import *
