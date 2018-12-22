@@ -27,7 +27,7 @@ def test_write_lca():
             s1 = s1.strip()
 
         p = os.path.join(DATA_FOLDER, 'test_lca_form.lca')
-        lca.write_lca(version = v)
+        lca.write_lca(version=v)
         with open(p, 'rt') as file:
             s2 = file.read()
             s2 = s2.strip()
@@ -35,11 +35,13 @@ def test_write_lca():
         assert s1 == s2
         os.remove(p)
 
+
 def test_script():
     command = 'lca_writer test_lca_form.xlsx'
-    check_output(command, cwd = DATA_FOLDER, shell = True)
+    check_output(command, cwd=DATA_FOLDER, shell=True)
     p = os.path.join(DATA_FOLDER, 'test_lca_form.lca')
     os.remove(p)
+
 
 def test_arg_parser():
     command = ['lca_form1.xlsx', 'lca_form2.xlsx', '--version', '12.2']
